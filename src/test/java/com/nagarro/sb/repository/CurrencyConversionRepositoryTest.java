@@ -6,6 +6,7 @@ import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
@@ -14,15 +15,16 @@ import com.nagarro.sb.dao.CurrencyRepository;
 import com.nagarro.sb.pojo.Currency;
 import com.nagarro.sb.pojo.CurrencyRates;
 
+@AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE)
 @RunWith(SpringRunner.class)
 @DataJpaTest
 public class CurrencyConversionRepositoryTest {
 
   @Autowired 
-  private CurrencyRepository currencyService;
+  private CurrencyRepository currencyRepository;
 
   @Autowired
-  private CurrencyRatesRepository currencyRatesService;
+  private CurrencyRatesRepository currencyRatesRepository;
   
   @Test
   public void validateCurrencyServiceIsWorkingAsExpected(){
@@ -31,7 +33,7 @@ public class CurrencyConversionRepositoryTest {
 	  c.setCode("usd");
 	  c.setName("Dollar");
 	  
-	  currencyService.save(c);
+	  currencyRepository.save(c);
 	  Assert.assertNotNull(c.getId());
 	  
   }
@@ -39,7 +41,7 @@ public class CurrencyConversionRepositoryTest {
   @Test
   public void validateCurrencyRateServiceIsWorkingAsExpected(){
 	  
-	  Collection<CurrencyRates> rates = (Collection<CurrencyRates>) currencyRatesService.findAll();
+	  Collection<CurrencyRates> rates = (Collection<CurrencyRates>) currencyRatesRepository.findAll();
 	  Assert.assertEquals(8, rates.size());
 	  
   }
