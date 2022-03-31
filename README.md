@@ -45,6 +45,7 @@ This is a currency converter service drafted as a demo to convert money between 
 - Mockito: Mocking tests
 - MockMVC: testing Spring MVC controllers
 - Docker: Containerization
+- Postman: Run test cases collection
 
 
 ## Authors
