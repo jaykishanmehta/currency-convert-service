@@ -14,6 +14,7 @@
 	<description>Project for currency conversion api</description>
 	<properties>
 		<java.version>1.8</java.version>
+		<spring.fox.version>3.0.0</spring.fox.version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -64,6 +65,24 @@
 				</exclusion>
 			</exclusions>
 		</dependency>
+
+		<!-- Swagger libs -->
+		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-swagger2</artifactId>
+			<version>${spring.fox.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-swagger-ui</artifactId>
+			<version>${spring.fox.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-bean-validators</artifactId>
+			<version>${spring.fox.version}</version>
+		</dependency>
+
 	</dependencies>
 
 	<build>
@@ -82,5 +101,23 @@
 			</plugin>
 		</plugins>
 	</build>
+
+	<profiles>
+        <profile>
+            <id>dev</id>
+            <properties>
+                <activatedProperties>dev</activatedProperties>
+            </properties>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+        </profile>
+        <profile>
+            <id>prod</id>
+            <properties>
+                <activatedProperties>prod</activatedProperties>
+            </properties>
+        </profile>
+    </profiles>
 
 </project>
