@@ -1,0 +1,44 @@
+version: '1'
+
+services:
+  app:
+    image: 'currency-convert-service'
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: app
+    depends_on:
+      - db
+      - maven
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://db:5432/currency-conversion-db
+      - SPRING_DATASOURCE_USERNAME=postgres
+      - SPRING_DATASOURCE_PASSWORD=root
+    ports:
+      - "8080:8080"
+    restart: always
+          
+  db:
+    image: 'postgres:13.1-alpine'
+    container_name: db
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=root
+      - POSTGRES_DB=currency-conversion-db
+    ports:
+      - "5432:5432"
+    restart: always
+    
+  maven:
+    image: maven:3
+    stop_signal: SIGKILL
+    stdin_open: true
+    tty: true
+    working_dir: $PWD
+    volumes:
+      - $PWD:$PWD
+      - /var/run/docker.sock:/var/run/docker.sock
+      - ~/.m2:/root/.m2
+    command: mvn clean install
+    depends_on:
+      - db
