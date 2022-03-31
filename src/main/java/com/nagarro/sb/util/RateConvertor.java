@@ -18,7 +18,7 @@ public class RateConvertor {
 	public void convert(ConversionPayload data) throws RatesNotAvailableException {
 		Optional<CurrencyRates> rate = cacheManager.findRates(data);
 		
-		if(rate.isEmpty()) {
+		if(!rate.isPresent()) {
 			throw new RatesNotAvailableException("Rate not found for " + data.getFrom() + " to " + data.getTo());
 		}
 		
