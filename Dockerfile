@@ -1,4 +1,5 @@
 FROM maven:3-jdk-11-slim as builder
+MAINTAINER Jaykishan Mehta <jaykishanmehta1991@gmail.com>
 WORKDIR /usr/currency-convert-service
 COPY . .
 RUN mvn clean install -Dmaven.test.skip
