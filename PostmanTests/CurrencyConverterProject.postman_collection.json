@@ -28,12 +28,12 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/api/available-currencies",
+					"raw": "http://{{host}}:{{port}}/api/available-currencies",
 					"protocol": "http",
 					"host": [
-						"localhost"
+						"{{host}}"
 					],
-					"port": "8080",
+					"port": "{{port}}",
 					"path": [
 						"api",
 						"available-currencies"
@@ -74,12 +74,12 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8080/api/convert-currency",
+					"raw": "http://{{host}}:{{port}}/api/convert-currency",
 					"protocol": "http",
 					"host": [
-						"localhost"
+						"{{host}}"
 					],
-					"port": "8080",
+					"port": "{{port}}",
 					"path": [
 						"api",
 						"convert-currency"
@@ -111,12 +111,12 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/api/available-conversions",
+					"raw": "http://{{host}}:{{port}}/api/available-conversions",
 					"protocol": "http",
 					"host": [
-						"localhost"
+						"{{host}}"
 					],
-					"port": "8080",
+					"port": "{{port}}",
 					"path": [
 						"api",
 						"available-conversions"
