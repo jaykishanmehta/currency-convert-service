@@ -46,11 +46,16 @@ This is a currency converter service drafted as a demo to convert money between 
 - MockMVC: testing Spring MVC controllers
 - Docker: Containerization
 - Postman: Run test cases collection
+- Spring doc: API documentation
 
 ## Available profiles: 
 - [DEV] Dev Environment 
 - [PROD] Stage Environment 
 - [TEST] Test cases
+
+## Swagger URLs:
+- ```/api/currency-convert-service-api ```
+- ```/api/swagger-ui.html ```
 
 ## Authors
 
