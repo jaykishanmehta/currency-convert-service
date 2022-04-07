@@ -47,7 +47,10 @@ This is a currency converter service drafted as a demo to convert money between 
 - Docker: Containerization
 - Postman: Run test cases collection
 
-## Available profiles: [DEV] Dev Environment [PROD] Stage Environment [TEST] Test cases
+## Available profiles: 
+- [DEV] Dev Environment 
+- [PROD] Stage Environment 
+- [TEST] Test cases
 
 ## Authors
 
