@@ -1,0 +1,66 @@
+Domain:
+Currency
+Comparative rates
+
+Currency convertor
+currency expose
+currency data loading
+
+https://getitdaily.com/rates/
+
+
+https://github.com/figield/currencyConverter/blob/master/src/main/java/com/currency/domain/service/ExchangeService.java
+
+Multi module ?
+Docker image should be created once all tests passes.
+
+https://www.baeldung.com/spring-boot-testcontainers-integration-test
+
+
+Docker
+https://www.adevguide.com/dockerize-java-application-maven-with-dockerfile/
+
+
+- Load data source from yml/properties for test
+- Store data for currency conversion ratio
+- Utilize stored logic to convert currency amount
+- Bean validation (https://reflectoring.io/bean-validation-with-spring-boot/)
+- Docker image creation & validation
+- 
+
+
+https://www.oanda.com/currency-converter/en/?from=USD&to=EUR&amount=1
+
+
+- Convert list of values passed in with single from/to 
+- DB layer need to move to DAO instead of service
+
+
+https://dzone.com/articles/build-a-spring-boot-app-with-flyway-and-postgres
+docker pull postgres:11
+docker run --name cc-dev -p 5432 -e POSTGRES_PASSWORD=root -d postgres:11
+docker exec cc-dev psql -U postgres -c "CREATE DATABASE ccdb" postgres
+
+
+https://github.com/miguno/java-docker-build-tutorial
+https://github.com/olegvovk96/Testcontainers/tree/master/postgresql-jdbc-url-demo start/stop scripts
+https://github.com/OKaluzny/spring-boot-docker-postgres .dockerignore file/.travis.yml
+https://codefresh.io/docker-tutorial/java_docker_pipeline/ learning
+
+- Validate docker file - Done
+- Docker compose not working - Done
+- Test docker image - Done
+- Add swagger
+- Multi module project
+- Test cases
+- Actuator
+- UAT/docker properties - Done
+- Improve logger
+- Repo description - Done
+
+-Dspring.profiles.active=prod
+
+git clone https://github.com/jaykishanmehta/currency-convert-service.git -b main
+cd currency-convert-service
+docker-compose up [Optional: --build]
+
